@@ -53,7 +53,7 @@ class LocationRepository @Inject constructor(
     @RequiresPermission(anyOf = [ACCESS_COARSE_LOCATION, ACCESS_FINE_LOCATION])
     private fun LocationManager.requestLocationUpdates() = callbackFlow {
 
-        val intervalMs = 30 * 1000L // 30 seconds
+        val intervalMs = 10 * 1000L // 30 seconds
         val minDistanceM = 0f
 
         val locationRequest = LocationRequestCompat.Builder(intervalMs)
